@@ -1,0 +1,75 @@
+
+using System;
+
+class palindrome
+{
+    static bool IsPalindrome(string str)
+    {
+        str = str.Replace(" ", "").ToLower();
+        int left = 0;
+        int right = str.Length-1;
+        while(left < right)
+        {
+            if(str[left] != str[right])
+            {
+                return false;
+                
+            }
+            else{
+            left++;
+            right--;
+            
+            }
+        }
+        return true;
+    }
+    static void Main(string[] args)
+    {
+    
+        string input = Console.ReadLine();
+        bool pal = IsPalindrome(input);
+        if(pal)
+        {
+            Console.WriteLine("its palindrome");
+        }
+        else
+        {
+            Console.WriteLine("its not palindrome");
+        }
+    }
+}
+
+
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+class palindrome
+{
+    
+    static void Main (string[] args)
+    {
+        Console.WriteLine("Enter the Number");
+        int number = int.Parse(Console.ReadLine());
+        int store = number;
+        int  reminder;
+        int last = 0;
+        while(number>0)
+        {
+            reminder = number%10;
+            last = (last*10)+ reminder;
+            number = number/10;
+         
+        }
+        if (store == last)
+        {
+            Console.WriteLine("its palindrome");
+        }
+        else{
+            Console.WriteLine("its not palindrome");
+        }
+        Console.WriteLine(last);
+        
+    }
+}
